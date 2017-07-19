@@ -213,7 +213,7 @@ class UglifyJsPlugin {
               }
 
               // Calling uglify
-              const { error, map, code, warnings } = uglify.minify({ [file]: input }, uglifyOptions);
+              const { error, map, code, warnings } = uglify.minify({ [file]: input }, JSON.parse(JSON.stringify(uglifyOptions)));
 
               // Handling results
               // Error case: add errors, and go to next file
